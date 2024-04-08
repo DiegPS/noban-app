@@ -1,54 +1,102 @@
-#logo {
-    display: block;
-    width: 50%;
-    height: 50%;
-    margin: auto;
-    padding: 10% 0 0;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-origin: content-box;
+.window-controls {
+    background-color: #0b0d136a;
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+    height: 40px;
+}
+.window-controls-search {
+    display: flex;
 }
 
-.result {
-    height: 20px;
-    line-height: 20px;
-    margin: 1.5rem auto;
+#placeholder-iframe {
+  display: grid;
+  place-content: center;
+}
+#placeholder-iframe > h1 {
+  font-size: 5rem;
+  color: #1e213772;
+  text-align: center;
 }
 
-.input-box .btn {
-    width: 60px;
-    height: 30px;
-    line-height: 30px;
-    border-radius: 3px;
+.window-controls-settings {
+    display: flex;
+}
+.button-window-control {
+    background-color: #0b0d130f;
+    color: rgba(255, 255, 255, 0.477);
+    display: flex;
+    align-items: center;
     border: none;
-    margin: 0 0 0 20px;
-    padding: 0 8px;
+    text-decoration: none;
     cursor: pointer;
 }
 
-.input-box .btn:hover {
-    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
-    color: #333333;
+.button-window-control:hover {
+    background-color: #232839;
 }
 
-.input-box .input {
+.input {
+    display: block;
+  }
+  .to-do-input {
+    color: rgb(133, 198, 255);
+    display: block;
+    max-width: 190px;
+    height: 38px;
+    padding: 1em 1em;
+    font-family: "Instrument Sans", sans-serif;
     border: none;
-    border-radius: 3px;
+    background-color: #0b0d1358;
+  }
+  .to-do-input:focus {
     outline: none;
-    height: 30px;
-    line-height: 30px;
-    padding: 0 10px;
-    background-color: rgba(240, 240, 240, 1);
-    -webkit-font-smoothing: antialiased;
-}
-
-.input-box .input:hover {
+  }
+  .todo-line {
+    z-index: 2;
+    position: absolute;
+    margin-top: -2px;
+    width: 216px;
+    height: 2px;
+    background-color: #0b0d1358;
+  }
+  .to-do-input:focus ~ .todo-line {
+    animation: draw 0.3s ease-in-out;
+    background: rgb(49, 228, 255);
+  }
+  @keyframes draw {
+    0% {
+      opacity: 0;
+      width: 0px;
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      opacity: 1;
+      width: 200px;
+      filter: hue-rotate(360deg);
+    }
+  }
+  .input.button {
+    display: flex;
+    height:38px;
+    padding: 0.8em 0.8em;
+    align-items: center;
+    background-color: #0b0d1358;
     border: none;
-    background-color: rgba(255, 255, 255, 1);
-}
+    margin-left: 5px;
+    color: rgb(37, 100, 129);
+    transform: translateX(-4px);
+    cursor: pointer;
+    transition: 0.5s all;
+  }
+  .input.button:active {
+    background-color: rgb(49, 228, 255);
+    transition: 0.5s all;
+  }
+  
 
-.input-box .input:focus {
-    border: none;
-    background-color: rgba(255, 255, 255, 1);
+#placeholder-iframe {
+  height: 90vh;
+  display: grid;
+  place-content: center;
 }

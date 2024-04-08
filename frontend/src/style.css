@@ -1,7 +1,17 @@
 html {
-    background-color: #0b0d13aa;
-    text-align: center;
+    background-color: #0b0d137a;
     color: white;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  
+html, body {
+    overflow: hidden;
 }
 
 body {
@@ -20,7 +30,148 @@ body {
     url("assets/fonts/nunito-v16-latin-regular.woff2") format("woff2");
 }
 
-#app {
-    height: 100vh;
-    text-align: center;
+/* === removing default button style ===*/
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
 }
+
+/* button styling */
+.button {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color: rgb(49, 228, 255);
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+
+/* this is the text */
+.button::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+
+/* Animation keyframes */
+@keyframes animateText {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* Apply animation */
+.button::after {
+  animation: animateText 2s infinite alternate;
+  filter: drop-shadow(0 0 23px var(--animation-color));
+}
+
+
+.autoComplete_wrapper {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .autoComplete_wrapper > input {
+    width: 370px;
+    height: 40px;
+    padding-left: 20px;
+    font-size: 1rem;
+    color: rgba(123, 123, 123, 1);
+    border-radius: 8px;
+    border: 0;
+    outline: none;
+    background-color: #191f23b1;
+  }
+  
+  .autoComplete_wrapper > input::placeholder {
+    color: rgba(123, 123, 123, 0.5);
+    transition: all 0.3s ease;
+  }
+  
+  .autoComplete_wrapper > ul {
+    position: absolute;
+    max-height: 226px;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    border-radius: 0.6rem;
+    background-color: #131b204a;
+    box-shadow: 0 3px 6px rgba(149, 157, 165, 0.15);
+    border: 1px solid rgba(33, 33, 33, 0.07);
+    z-index: 1000;
+    outline: none;
+  }
+  
+  .autoComplete_wrapper > ul[hidden],
+  .autoComplete_wrapper > ul:empty {
+    display: block;
+    opacity: 0;
+    transform: scale(0);
+  }
+  
+  .autoComplete_wrapper > ul > li {
+    margin: 0.3rem;
+    padding: 0.3rem 0.5rem;
+    list-style: none;
+    text-align: left;
+    font-size: 1rem;
+    color: #212121;
+    transition: all 0.1s ease-in-out;
+    border-radius: 0.35rem;
+    background-color: rgba(59, 50, 85, 0.353);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 0.2s ease;
+  }
+  
+  .autoComplete_wrapper > ul > li::selection {
+    color: rgba(#2f3b434a, 0);
+    background-color: rgba(#2f3b434a, 0);
+  }
+  
+  .autoComplete_wrapper > ul > li:hover {
+    cursor: pointer;
+    background-color: rgba(123, 123, 123, 0.1);
+  }
+  
+  .autoComplete_wrapper > ul > li mark {
+    background-color: transparent;
+    color: #6ea3d2;
+    font-weight: bold;
+  }
+  
+  .autoComplete_wrapper > ul > li mark::selection {
+    color: rgba(#2f3b434a, 0);
+    background-color: rgba(#2f3b434a, 0);
+  }
+  
+  .autoComplete_wrapper > ul > li[aria-selected="true"] {
+    background-color: rgba(123, 123, 123, 0.1);
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .autoComplete_wrapper > input {
+      width: 18rem;
+    }
+  }
+  

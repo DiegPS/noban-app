@@ -10,5 +10,8 @@
   "devDependencies": {
     "typescript": "^4.5.4",
     "vite": "^3.0.7"
+  },
+  "dependencies": {
+    "@tarekraafat/autocomplete.js": "^10.2.7"
   }
 }
