@@ -1,19 +1,64 @@
-# README
+# Navegador Web Sencillo
 
-## About
+Este es un navegador web sencillo que utiliza iframes, un proxy y Wails para mostrar los contenidos.
 
-This is the official Wails Vanilla-TS template.
+## Características
 
-You can configure the project by editing `wails.json`. More information about the project settings can be found
-here: https://wails.io/docs/reference/project-config
+- Utiliza iframes para cargar y mostrar los contenidos de las páginas web.
+- Utiliza un proxy para acceder a los sitios web y evitar problemas de seguridad.
+- Creado con Wails, una herramienta que permite crear aplicaciones con WebView utilizando tecnologías web como HTML, CSS y JavaScript.
 
-## Live Development
+## Requisitos
 
-To run in live development mode, run `wails dev` in the project directory. This will run a Vite development
-server that will provide very fast hot reload of your frontend changes. If you want to develop in a browser
-and have access to your Go methods, there is also a dev server that runs on http://localhost:34115. Connect
-to this in your browser, and you can call your Go code from devtools.
+- [Wails](https://wails.app/) instalado en tu sistema.
 
-## Building
+## Instalación
 
-To build a redistributable, production mode package, use `wails build`.
+1. Clona este repositorio:
+
+    ```bash
+    git clone https://github.com/DiegPS/noban-browser.git
+    ```
+
+2. Navega al directorio del repositorio:
+
+    ```bash
+    cd navegador-web-sencillo
+    ```
+
+3. Instala las dependencias:
+
+    ```bash
+    wails build
+    ```
+
+## Uso
+
+1. Ejecuta la aplicación:
+
+    ```bash
+    wails serve
+    ```
+
+2. Abre tu navegador web y accede a la siguiente URL:
+
+    ```
+    http://localhost:34115
+    ```
+
+3. Ingresa la URL del sitio web que deseas visitar en el campo de búsqueda y presiona Enter.
+
+4. El contenido del sitio web se cargará en el navegador utilizando iframes y el proxy.
+
+## Contribución
+
+Si deseas contribuir a este proyecto, por favor sigue los siguientes pasos:
+
+1. Crea un fork de este repositorio.
+2. Crea una nueva rama para tu contribución.
+3. Realiza los cambios y realiza un commit.
+4. Envía un pull request con tus cambios.
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
