@@ -1,4 +1,4 @@
-# Navegador Web Sencillo
+ # Navegador Web Sencillo
 
 Este es un navegador web sencillo que utiliza iframes, un proxy y Wails para mostrar los contenidos.
 
